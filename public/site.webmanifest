@@ -1,0 +1,19 @@
+{
+  "name": "Portfolio Gallery",
+  "short_name": "PortfolioGallery",
+  "description": "A curated showcase of developer portfolios with live previews, source code links, and inspiration for developers.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["web", "design", "tools", "productivity"]
+}

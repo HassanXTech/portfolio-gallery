@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://portfoliogallery.dev
+
+# Sitemaps
+Sitemap: https://portfoliogallery.dev/sitemap.xml
