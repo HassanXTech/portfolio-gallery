@@ -201,8 +201,6 @@ Each portfolio includes:
 
 ## Contributing
 
-> **This project is sponsored by Vercel, which helps us maintain a stable development environment.**
-
 We welcome contributions to expand the portfolio collection. To add new portfolios:
 
 ### Adding New Portfolios
