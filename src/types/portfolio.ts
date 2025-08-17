@@ -7,7 +7,7 @@ export interface Portfolio {
   category: CategoryId;
   description?: string;
   tags?: string[];
-  badge?: "New" | " ";
+  badge?: "New" | "Popular" | " ";
   thumbnailUrl?: string;
   thumbnailFit?: "contain" | "cover";
   sourceUrl?: string;
