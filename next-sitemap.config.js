@@ -12,7 +12,7 @@ module.exports = {
     '/500',
   ],
   changefreq: 'weekly', 
-  priority: 0.7,        
+  priority: 0.8,        
   trailingSlash: false,
   sourceMap: false,
 };

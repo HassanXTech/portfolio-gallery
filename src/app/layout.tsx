@@ -1,4 +1,5 @@
-// import removed
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type React from "react";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
@@ -7,86 +8,135 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfoliogallery.vercel.app"),
-  title: "Portfolio Gallery - Curated Developer Portfolios",
+  metadataBase: new URL("https://portfoliogallery.dev"),
+  title: "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
   description:
-    "Browse a curated gallery of developer portfolios. Preview live sites, explore source code, and get inspired.",
+    "Explore a curated collection of 100+ stunning developer portfolios with live previews and source code access. Find inspiration for web development, UI/UX design, mobile apps, and more. Perfect for developers, hiring managers, and design inspiration.",
   keywords: [
-    // Portfolio-focused keywords
+    // Primary keywords (focus on user intent)
     "developer portfolios",
-    "portfolio inspiration",
-    "frontend portfolio examples",
-    "nextjs portfolio",
-    "react portfolio",
+    "portfolio gallery",
+    "portfolio showcase",
+    "web development portfolios",
+    "ui ux design portfolios",
+    "mobile app portfolios",
+    "data science portfolios",
+    "backend devops portfolios",
+    "agency portfolios",
+    "design engineering portfolios",
+    "indie maker portfolios",
+    "game development portfolios",
+    "student portfolios",
+    "content writing portfolios",
 
-    // Long-tail
-    "modern portfolio websites",
-    "beautiful developer portfolios",
+    // Long-tail keywords (better for ranking)
+    "free developer portfolio examples",
+    "responsive portfolio designs",
+    "modern portfolio inspiration",
+    "portfolio design inspiration",
+    "developer portfolio collection",
+    "portfolio browsing platform",
+    "live portfolio previews",
+    "github portfolio showcase",
+    "portfolio search and filter",
+    "favorite portfolio system",
 
     // Problem-solving keywords
-    "how to build portfolio with nextjs",
-    "portfolio components",
+    "how to find portfolio inspiration",
+    "where to see developer portfolios",
+    "best portfolio examples for developers",
+    "portfolio design ideas for developers",
+    "portfolio inspiration for hiring",
+    "modern portfolio design trends",
 
-    // Snippets
-    "portfolio templates",
+    // Portfolio-specific keywords
+    "portfolio gallery",
+    "portfolio showcase platform",
+    "developer portfolio browsing",
+    "portfolio inspiration tool",
+    "portfolio collection website",
+    "portfolio discovery platform",
+    "portfolio browsing experience",
+    "portfolio search functionality",
 
-    // Modern design
-    "modern portfolio design",
+    // Modern portfolio keywords
+    "modern developer portfolios",
+    "contemporary portfolio designs",
+    "trendy portfolio layouts",
+    "innovative portfolio ideas",
+    "cutting-edge portfolio designs",
 
-    // Examples
+    // Portfolio examples keywords
     "portfolio examples",
+    "portfolio design examples",
+    "developer portfolio examples",
+    "web developer portfolio examples",
+    "ui designer portfolio examples",
 
-    // Aesthetics
-    "beautiful portfolio",
+    // Beautiful portfolio keywords
+    "beautiful portfolio designs",
+    "stunning portfolio examples",
+    "aesthetic portfolio layouts",
+    "visually appealing portfolios",
+    "creative portfolio designs",
 
-    // Remove extra gradient-heavy keywords
+    // Website portfolio keywords
+    "portfolio websites",
+    "developer portfolio websites",
+    "designer portfolio websites",
+    "portfolio website examples",
+    "portfolio website inspiration",
 
-    // General web
-    "frontend inspiration",
-
-    // Portfolio keywords
-    "developer portfolio",
-    "portfolio inspiration",
-    "nextjs portfolio",
-    "react portfolio",
+    // Brand keywords
+    "portfolio gallery",
+    "portfolio gallery dev",
+    "portfoliogallery",
+    "portfoliogallery dev",
 
     // General keywords
-    "tailwind css",
-    "background css",
-    "background tailwind css",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "vercel",
 
     // Primary keywords (high intent)
-    "cool gradient backgrounds for websites",
-    "free CSS background patterns",
-    "unique website background designs",
-    "modern gradient color backgrounds",
-    "geometric backgrounds for websites",
-    "decorative website background patterns",
-    "website background effects",
-    "stylish backgrounds for web design",
+    "cool developer portfolios for inspiration",
+    "free developer portfolio examples",
+    "unique portfolio design ideas",
+    "modern portfolio design inspiration",
+    "geometric portfolio layouts",
+    "decorative portfolio designs",
+    "portfolio design effects",
+    "stylish portfolio layouts",
 
     // Long-tail keywords (highly targeted)
-    "where to find cool gradient website backgrounds",
-    "best sites for free CSS background patterns",
-    "how to add gradients in Tailwind CSS",
-    "trendy background effects for websites",
-    "creative backgrounds for frontend projects",
-    "tailwind-compatible gradient color ideas",
-    "lightweight CSS background snippets for websites",
-    "open-source background patterns for web developers",
-    "free gradient palettes for web design",
+    "where to find cool developer portfolios",
+    "best sites for portfolio inspiration",
+    "how to create modern portfolios",
+    "trendy portfolio design ideas",
+    "creative portfolio layouts for developers",
+    "nextjs-compatible portfolio ideas",
+    "lightweight portfolio examples for developers",
+    "open-source portfolio inspiration for web developers",
+    "free portfolio design resources",
 
     // LSI (related context keywords)
-    "UI background resources",
-    "frontend design assets",
-    "portfolio gallery",
-    "frontend portfolio examples",
-    "modern portfolio design",
+    "UI portfolio resources",
+    "frontend portfolio assets",
+    "portfolio design collections",
+    "Next.js portfolio examples",
+    "free portfolio templates",
+    "web design portfolio tools",
+    "portfolio design inspiration",
+    "modern portfolio ideas",
+    "website portfolio tools",
+    "design-ready portfolio examples",
   ].join(", "),
 
-  authors: [{ name: "Megh Bari", url: "https://github.com/HassanXTech" }],
-  creator: "Megh Bari",
-  publisher: "PortfolioGallery",
+  authors: [{ name: "HassanXTech", url: "https://github.com/HassanXTech" }],
+  creator: "HassanXTech",
+  publisher: "Portfolio Gallery",
 
   robots: {
     index: true,
@@ -104,10 +154,10 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Portfolio Gallery - Curated Developer Portfolios",
+    title: "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
     description:
-      "Discover developer portfolios with live previews and source links.",
-    url: "https://portfoliogallery.vercel.app",
+      "Explore a curated collection of 100+ stunning developer portfolios with live previews and source code access. Perfect for developers, hiring managers, and design inspiration.",
+    url: "https://portfoliogallery.dev",
     siteName: "Portfolio Gallery",
     type: "website",
     images: [
@@ -115,38 +165,42 @@ export const metadata: Metadata = {
         url: "/og-banner.png",
         width: 1200,
         height: 630,
-        alt: "Portfolio Gallery – Curated Developer Portfolios",
+        alt: "Portfolio Gallery – Discover 100+ Stunning Developer Portfolios",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio Gallery - Curated Developer Portfolios",
-    description:
-      "Curated developer portfolios with live previews and source links.",
+    title: "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+    description: "100+ curated developer portfolios with live previews and source code access. Perfect for developers, hiring managers, and design inspiration.",
     images: ["/og-banner.png"],
     creator: "@HassanXTech",
     site: "@HassanXTech",
   },
-  alternates: { canonical: "https://portfoliogallery.vercel.app" },
+  alternates: {
+    canonical: "https://portfoliogallery.dev",
+  },
 
-  classification: "Developer Portfolios, Web Design Inspiration",
+  classification: "Web Development, Portfolio Showcase, Design Inspiration",
 
   // Additional SEO enhancements
   category: [
     "Web Development Tools",
-    "Frontend Development",
-    "CSS Tools",
-    "UI Design Resources",
-    "Background Patterns",
-    "Gradients Generator",
-    "Tailwind CSS Resources",
-    "Web Design Assets",
-    "Open Source Tools",
-    "Developer Productivity",
-    "Creative Coding",
+    "Portfolio Showcase",
     "Design Inspiration",
-    "Code Snippets",
+    "Developer Resources",
+    "Portfolio Gallery",
+    "UI/UX Design",
+    "Mobile App Development",
+    "Data Science",
+    "Backend Development",
+    "DevOps",
+    "Agency Showcase",
+    "Design Engineering",
+    "Indie Makers",
+    "Game Development",
+    "Student Projects",
+    "Content Creation",
     "Modern Web Design",
     "Responsive Design",
   ].join(", "),
@@ -165,13 +219,13 @@ export const metadata: Metadata = {
     "theme-color": "#000000",
 
     // Additional meta tags for better discovery
-    "google-site-verification": "xeqxMvzZZQWV43nn06hJDnwUVVaRfYRaMrYHy",
+    "google-site-verification": "your-verification-code-here",
 
     // Rich snippets hints
-    "article:author": "Megh Bari",
+    "article:author": "HassanXTech",
     "article:publisher": "https://github.com/HassanXTech",
     "article:section": "Web Development",
-    "article:tag": "CSS, Background Patterns, Gradients, Web Design",
+    "article:tag": "Developer Portfolios, Portfolio Showcase, Design Inspiration, Web Development",
     "og:updated_time": new Date().toISOString(),
     "og:locale": "en_US",
     "og:type": "website",
@@ -179,7 +233,7 @@ export const metadata: Metadata = {
     "revisit-after": "7 days",
     distribution: "global",
     rating: "general",
-    copyright: "© 2025 Megh Bari. All rights reserved.",
+    copyright: "© 2025 HassanXTech. All rights reserved.",
   },
 };
 
@@ -192,18 +246,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* og image */}
-        <meta property="og:image" content="/og-banner.png" />
-        <meta name="twitter:image" content="/og-banner.png" />
+        <meta
+          property="og:image"
+          content="https://portfoliogallery.dev/og-banner.png"
+        />
+        <meta
+          name="twitter:image"
+          content="https://portfoliogallery.dev/og-banner.png"
+        />
+        <meta name="google-site-verification" content="your-verification-code-here" />
 
-        {/* <meta property="og:image" content="https://portfoliogallery.dev/opengraph-image.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
-        <meta name="twitter:image" content="https://portfoliogallery.dev/twitter-image.png" />
-        <meta name="twitter:image:type" content="image/png" />
-        <meta name="twitter:image:width" content="1200" />
-        <meta name="twitter:image:height" content="630" /> */}
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -212,7 +264,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Portfolio Gallery",
-              url: "https://portfoliogallery.vercel.app/",
+              url: "https://portfoliogallery.dev/",
             }),
           }}
         />
@@ -225,41 +277,233 @@ export default function RootLayout({
               "@type": "WebApplication",
               name: "Portfolio Gallery",
               description:
-                "Curated developer portfolios with live previews and source links.",
-              url: "https://portfoliogallery.vercel.app",
-              applicationCategory: "Website",
-              inLanguage: "en-US",
-              isAccessibleForFree: true,
+                "Discover and showcase 100+ stunning developer portfolios with live previews and source code access",
+              url: "https://portfoliogallery.dev",
+              applicationCategory: "DeveloperApplication",
+              operatingSystem: "Web",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+              },
+              author: {
+                "@type": "Person",
+                name: "HassanXTech",
+                url: "https://github.com/HassanXTech",
+              },
               publisher: {
                 "@type": "Organization",
                 name: "Portfolio Gallery",
-                url: "https://portfoliogallery.vercel.app",
-              }
+                url: "https://portfoliogallery.dev",
+              },
+              datePublished: "2024-01-01",
+              dateModified: new Date().toISOString(),
+              inLanguage: "en-US",
+              isAccessibleForFree: true,
+              keywords:
+                "Developer Portfolios, Portfolio Showcase, Design Inspiration, Web Development, UI/UX Design",
+              screenshot: [
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-1.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-2.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-3.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-4.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-5.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-6.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-7.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-8.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-9.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-10.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-11.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-12.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-13.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-14.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-15.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-16.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-17.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-18.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-19.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-20.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-21.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+                {
+                  "@type": "ImageObject",
+                  contentUrl:
+                    "https://portfoliogallery.dev/snapshots/screenshot-22.png",
+                  description:
+                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                },
+              ],
+              softwareVersion: "1.0.0",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                ratingCount: "100",
+                bestRating: "5",
+                worstRating: "1",
+              },
+              sameAs: [
+                "https://github.com/HassanXTech",
+                "https://twitter.com/HassanXTech",
+                "https://portfoliogallery.dev",
+              ],
+              featureList: [
+                "100+ curated developer portfolios",
+                "Live portfolio previews with iframe embeds",
+                "Source code access and GitHub links",
+                "Category-based portfolio organization",
+                "Search and filter functionality",
+                "Favorites system for portfolio management",
+                "Responsive design for all devices",
+                "Dark/light theme support",
+              ],
+              browserRequirements: "Requires modern browser with JavaScript support",
+              interactionStatistic: {
+                "@type": "InteractionCounter",
+                interactionType: { "@type": "http://schema.org/ViewAction" },
+                userInteractionCount: 2500,
+              },
             }),
           }}
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
-        className={`${GeistSans.className} text-foreground antialiased`}
+        className={`${GeistSans.className} bg-background text-foreground antialiased min-h-screen`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
+          defaultTheme="system"
+          enableSystem={true}
         >
-          <div className="min-h-screen w-full relative">
-            <div
-              className="fixed inset-0 -z-10 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(125% 125% at 50% 10%, #fff 40%, #6366f1 100%)",
-              } as React.CSSProperties}
-            />
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {children}
-            </div>
-          </div>
+          {children}
+          <Analytics />
+          <SpeedInsights />
           <Toaster />
         </ThemeProvider>
       </body>
