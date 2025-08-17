@@ -17,22 +17,10 @@
     <img src="https://img.shields.io/github/stars/HassanXTech/portfolio-gallery?style=social" alt="GitHub stars" />
 <img src="https://img.shields.io/github/forks/HassanXTech/portfolio-gallery?style=social" alt="GitHub forks" />
 <img src="https://img.shields.io/github/license/HassanXTech/portfolio-gallery?style=social" alt="License" />
-<a href="https://vercel.com/oss">
-    <img src="https://img.shields.io/badge/Sponsored%20by-Vercel-000000?style=social&logo=vercel&logoColor=black" alt="Sponsored by Vercel" />
-</a>
     
   </p>
 </div>
 
----
-
-> **This project is proudly sponsored by [Vercel](https://vercel.com/oss). Thank you for supporting open source!**
-
-  <p align="center">
-<a href="https://vercel.com/oss">
-<img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" height="40">
-</a>
-</p>
 
 ## Visit: **[Portfolio Gallery](https://portfoliogallery.dev)**
 
@@ -77,16 +65,6 @@ Check out this growing list of shoutouts, showcases, and love from the community
 - **Vercel** - Deployment and hosting
 - **React Context** - State management for favorites
 - **Next.js Image** - Optimized image handling
-
-## Sponsored by <a href="https://vercel.com/oss">Vercel⚡</a>
-
-**This project is proudly powered by <b>Vercel</b>. The platform behind Portfolio Gallery's blazing-fast deployment and seamless scalability.**<br>
-
-<i>Big thanks to Vercel for supporting open source and keeping this project running smoothly!</i>
-<br><br>
-<a href="https://vercel.com/oss">
-<img src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" height="40">
-</a>
 
 </p>
 
@@ -391,4 +369,4 @@ If you like this project, consider giving it a ⭐️ on GitHub and sharing it w
 
 ---
 
-> _**Happy showcasing!**_
+> _**Happy coding!**_
