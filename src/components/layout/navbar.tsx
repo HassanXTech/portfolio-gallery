@@ -22,7 +22,7 @@ export default function Navbar({ theme }: NavbarProps) {
           }`}
         >
           <Image
-            src="/favicon.svg"
+            src="/favicon.png"
             alt="PortfolioGallery Logo"
             width={28}
             height={28}

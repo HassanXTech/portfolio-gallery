@@ -35,6 +35,7 @@ export const gridPortfolios: Portfolio[] = [
     thumbnailFit: "cover",
     liveUrl: "https://enscribe.dev",
     sourceUrl: "https://github.com/jktrn/enscribe.dev",
+    tags : ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
     style: {},
   },
   {

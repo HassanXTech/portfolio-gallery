@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.png",
   },
   manifest: "/site.webmanifest",
   openGraph: {
