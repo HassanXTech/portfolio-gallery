@@ -1,6 +1,6 @@
 # Portfolio Gallery
 
-> _**For developers, by developer. Portfolio that slaps⚡**_
+> _**For developers, by developers. Portfolio that slaps⚡**_
 
 <div align="center">
   <img src="./public/images/readme-banner.png" alt="Portfolio Gallery Banner" />
@@ -24,10 +24,10 @@
 
 ## Visit: **[Portfolio Gallery](https://portfoliogallery.dev)**
 
-![UI Image](./public/images/readme-img-one.png)
+<!-- ![UI Image](./public/images/readme-img-one.png)
 ![UI Image](./public/images/readme-img-two.png)
 ![UI Image](./public/images/readme-img-four.png)
-![UI Image](./public/images/readme-img-three.png)
+![UI Image](./public/images/readme-img-three.png) -->
 
 > _**Note: This project showcases real developer portfolios with live previews, source code links, and inspiration for developers and designers.**_  
 > [Learn more about contributing portfolios.](https://github.com/HassanXTech/portfolio-gallery/discussions)
@@ -131,7 +131,7 @@ These portfolios are great for:
 
 ## Demo
 
-[Watch the demo video](https://github.com/user-attachments/assets/c283ecbc-8732-412b-adab-5c17d1a390cc)
+[Watch the demo video (Soon)](Soon)
 
 ## Customization
 
