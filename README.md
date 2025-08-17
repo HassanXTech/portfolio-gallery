@@ -98,49 +98,30 @@ pnpm install
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Contributing
+### Build for Production
 
-We welcome contributions! Here's how you can help:
+```bash
+npm run build
+npm start
+```
 
-### Adding New Portfolios
+## How to Use This
 
-1. Fork the repository
-2. Add your portfolio to `src/data/portfolios.ts`
-3. Include a high-quality thumbnail image
-4. Provide live URL and source code links
-5. Submit a pull request
+1. Visit the live site: **[https://portfoliogallery.dev](https://portfoliogallery.dev)**
+2. Browse through the collection of developer portfolios by category.
+3. Click on any portfolio to open its preview modal with live website preview.
+4. Use the toggle to switch between thumbnail and live preview.
+5. Access source code and visit the live website directly from the modal.
+6. Add portfolios to your favorites for easy access later.
 
-### Portfolio Requirements
+These portfolios are great for:
 
-- **High-quality thumbnail** (minimum 1200x800px)
-- **Live demo URL** (working website)
-- **Source code link** (GitHub repository)
-- **Proper categorization** (web, mobile, uiux, etc.)
-- **Responsive design** (mobile-friendly)
-
-### Development
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## Portfolio Categories
-
-- **Web Development** - Full-stack, frontend, and backend portfolios
-- **Mobile Apps** - iOS, Android, and cross-platform development
-- **UI/UX Design** - User interface and user experience design
-- **Data Science & ML** - Data analysis, machine learning, and AI
-- **Backend & DevOps** - Server-side development and infrastructure
-- **Agency** - Creative agency and studio portfolios
-- **Design Engineering** - Design systems and component libraries
-- **Indie Makers** - Independent developers and creators
-- **Game Development** - Game design and development portfolios
-- **Student/Junior** - Student and junior developer portfolios
-- **Content & Writing** - Technical writing and content creation
+- Finding design inspiration
+- Evaluating developer talent
+- Learning new techniques
+- Building your own portfolio
 
 ## Screenshots
 
@@ -153,16 +134,176 @@ We welcome contributions! Here's how you can help:
   <img src="./public/snapshots/screenshot-6.png" alt="Portfolio Gallery Portfolio Details" width="400" />
 </div>
 
-## Why Portfolio Gallery?
 
-- **🎯 Curated Quality** - Hand-picked portfolios from talented developers
-- **🚀 Live Previews** - See portfolios in action before visiting
-- **💻 Source Code** - Access to GitHub repositories and code
-- **🔍 Easy Discovery** - Search and filter by category, tags, and more
-- **❤️ Favorites System** - Save and organize your favorite portfolios
-- **📱 Responsive Design** - Works perfectly on all devices
-- **🌙 Dark/Light Theme** - Automatic theme switching
-- **⚡ Fast Performance** - Built with Next.js for optimal speed
+### Portfolio Categories
+
+The application supports these portfolio categories:
+
+- **Web Development** - Full-stack web applications
+- **Mobile Apps** - iOS and Android applications
+- **UI/UX Design** - User interface and experience design
+- **Data Science & ML** - Machine learning and data projects
+- **Backend & DevOps** - Server-side and infrastructure
+- **Agency** - Creative agency portfolios
+- **Design Engineering** - Design systems and engineering
+- **Indie Makers** - Independent developer projects
+- **Game Dev** - Game development portfolios
+- **Student/Junior** - Early career developers
+- **Content & Writing** - Technical writing and content
+
+### Customization Tips
+
+**Thumbnails**: Use high-quality images with 16:9 aspect ratio
+**Live URLs**: Ensure websites are accessible and mobile-friendly
+**Source Code**: Link to public repositories with clear documentation
+**Tags**: Use relevant, searchable technology tags
+**Descriptions**: Write clear, concise descriptions of the work
+
+## Usage
+
+1. Browse the portfolio collection on the website
+2. Use category tabs to filter by portfolio type
+3. Search for specific portfolios or technologies
+4. Click on portfolios to see live previews
+5. Add interesting portfolios to your favorites
+6. Access source code and live websites directly
+
+Each portfolio includes:
+
+- High-quality thumbnail preview
+- Live website preview (when available)
+- Source code repository link
+- Technology tags and descriptions
+- Responsive design showcase
+
+## Contributing
+
+We welcome contributions to expand the portfolio collection. To add new portfolios:
+
+### Adding New Portfolios
+
+1. Fork the repository
+2. Create a feature branch:
+
+```bash
+git checkout -b feature/new-portfolio-name
+```
+
+3. Navigate to `src/data/portfolios.ts`
+4. Add your portfolio following the established format:
+
+```typescript
+{
+  id: "unique-portfolio-id",
+  name: "Portfolio Display Name",
+  category: "web-development",
+  description: "A brief description of the portfolio",
+  badge: "New", // Optional: "New", "Popular"
+  thumbnailUrl: "https://example.com/thumbnail.png",
+  liveUrl: "https://example.com",
+  sourceUrl: "https://github.com/username/repo",
+  tags: ["React", "Next.js", "Tailwind CSS"],
+  thumbnailFit: "contain", // "contain" or "cover"
+  style: {
+    background: "#ffffff",
+    // Optional custom background styling
+  },
+}
+```
+
+### Contribution Guidelines
+
+- **Quality**: Ensure portfolios are professional and well-designed
+- **Accessibility**: Verify live URLs are accessible and mobile-friendly
+- **Documentation**: Include clear descriptions and relevant tags
+- **Thumbnails**: Use high-quality images that represent the work well
+- **Uniqueness**: Avoid duplicating existing portfolios
+- **Performance**: Ensure live websites load reasonably fast
+
+### Portfolio Requirements
+
+- **High-quality thumbnail** (minimum 1200x800px)
+- **Live demo URL** (working website)
+- **Source code link** (GitHub repository)
+- **Proper categorization** (web, mobile, uiux, etc.)
+- **Responsive design** (mobile-friendly)
+
+### Testing Your Portfolios
+
+1. Test the portfolio in the development environment
+2. Verify thumbnail displays correctly
+3. Check live website accessibility
+4. Ensure source code links work
+5. Test responsive behavior across devices
+
+### Pull Request Process
+
+1. Commit your changes with descriptive messages
+2. Push to your feature branch
+3. Create a pull request with:
+   - Clear description of the portfolio added
+   - Screenshots or preview of the portfolio
+   - Any special considerations or notes
+
+```bash
+git add .
+git commit -m "feat: add new web development portfolio"
+git push origin feature/new-portfolio-name
+```
+
+## Development
+
+### Project Structure
+
+```
+portfolio-gallery/
+src/
+├── app/                   
+│   ├── globals.css       
+│   ├── layout.tsx        
+│   ├── page.tsx           
+│   └── not-found.tsx      
+│
+├── components/           
+│   ├── ui/                # shadcn/ui components
+│   │   ├── badge.tsx     
+│   │   ├── button.tsx     
+│   │   └── tabs.tsx       
+│   ├── layout/            
+│   │   ├── navbar.tsx     
+│   │   └── footer.tsx     
+│   ├── portfolio/         
+│   │   ├── portfolio-showcase.tsx     
+│   │   ├── portfolio-card.tsx        
+│   │   ├── portfolio-grid.tsx         
+│   │   ├── portfolio-modal.tsx
+│   │   └── portfolio-empty-state.tsx 
+│   ├── home/             
+│   │   ├── hero.tsx               
+│   │   ├── support-dropdown.tsx   
+│   │   └── return-to-preview.tsx  
+│   └── providers/         
+│       └── theme-provider.tsx 
+│
+├── lib/                   
+│   ├── utils.ts           
+│   └── constants.ts      
+│
+├── hooks/                 
+│   ├── useTheme.tsx       
+│   └── useCopy.tsx        
+│
+├── types/                 
+│   ├── portfolio.ts         
+│   └── index.ts           
+│
+├── context/               
+│   └── favourites-context.tsx 
+│
+└── data/                 
+    ├── portfolios.ts      # Portfolio data (contribute here)
+    └── categories.ts      
+```
 
 ## Community
 
@@ -176,14 +317,26 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- **Next.js Team** - For the amazing React framework
-- **Tailwind CSS** - For the utility-first CSS framework
-- **Vercel** - For hosting and deployment
-- **All Contributors** - For making this project better
+- Built with Next.js and Tailwind CSS
+- Inspired by modern portfolio design patterns
+- Community-driven portfolio collection
+- Powered by Vercel for seamless deployment
+
+## Support
+
+For questions, issues, or suggestions:
+
+- Open an issue on GitHub
+- Check existing issues before creating new ones
+- Provide detailed information for bug reports
+- Join discussions for feature requests
+
+## Built By
+
+- GitHub: [@HassanXTech](https://github.com/HassanXTech)
+
+If you like this project, consider giving it a ⭐️ on GitHub and sharing it with others!
 
 ---
 
-<div align="center">
-  <p>Made with ❤️ by <a href="https://github.com/HassanXTech">HassanXTech</a></p>
-  <p>If you find this project helpful, please give it a ⭐️</p>
-</div>
+> _**Happy coding!**_
