@@ -16,7 +16,9 @@
   <p align="center">
     <img src="https://img.shields.io/github/stars/HassanXTech/portfolio-gallery?style=social" alt="GitHub stars" />
 <img src="https://img.shields.io/github/forks/HassanXTech/portfolio-gallery?style=social" alt="GitHub forks" />
-<img src="https://img.shields.io/github/license/HassanXTech/portfolio-gallery?style=social" alt="License" />
+<img src="https://img.shields.io/github/license/HassanXTech/portfolio-gallery" alt="License" />
+<img src="https://img.shields.io/github/last-commit/HassanXTech/portfolio-gallery" alt="Last commit" />
+<img src="https://img.shields.io/github/issues/HassanXTech/portfolio-gallery" alt="Issues" />
     
   </p>
 </div>
