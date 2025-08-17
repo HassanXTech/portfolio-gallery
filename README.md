@@ -24,10 +24,10 @@
 
 ## Visit: **[Portfolio Gallery](https://portfoliogallery.dev)**
 
-<!-- ![UI Image](./public/images/readme-img-one.png)
+![UI Image](./public/images/readme-img-one.png)
 ![UI Image](./public/images/readme-img-two.png)
 ![UI Image](./public/images/readme-img-four.png)
-![UI Image](./public/images/readme-img-three.png) -->
+![UI Image](./public/images/readme-img-three.png)
 
 > _**Note: This project showcases real developer portfolios with live previews, source code links, and inspiration for developers and designers.**_  
 > [Learn more about contributing portfolios.](https://github.com/HassanXTech/portfolio-gallery/discussions)
