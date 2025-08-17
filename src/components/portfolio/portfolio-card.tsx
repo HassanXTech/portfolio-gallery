@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Sparkles, Star, ExternalLink } from "lucide-react";
 import { Portfolio } from "@/types/portfolio";
 import { useFavorites } from "@/context/favourites-context";
+import { GitHubAvatar } from "@/components/ui/github-avatar";
 
 interface PatternCardProps {
   pattern: Portfolio;
@@ -59,7 +60,7 @@ export default function PortfolioCard({
           />
         </button>
 
-        {/* Pattern style or portfolio thumbnail */}
+        {/* Portfolio thumbnail or GitHub avatar fallback */}
         {pattern.thumbnailUrl ? (
           <>
             <div
@@ -81,7 +82,15 @@ export default function PortfolioCard({
             />
           </>
         ) : (
-          <div className="absolute inset-0" style={pattern.style} />
+          // GitHub Avatar Fallback
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+            <GitHubAvatar
+              sourceUrl={pattern.sourceUrl}
+              name={pattern.name}
+              size="lg"
+              className="relative z-10"
+            />
+          </div>
         )}
 
         {/* Badge */}

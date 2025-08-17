@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Portfolio } from "@/types/portfolio";
 import { Button } from "@/components/ui/button";
 import { X, ExternalLink, Code2, Eye, Image as ImageIcon } from "lucide-react";
+import { GitHubAvatar } from "@/components/ui/github-avatar";
 
 interface PortfolioModalProps {
   open: boolean;
@@ -57,7 +58,7 @@ export function PortfolioModal({ open, onClose, item }: PortfolioModalProps) {
         </button>
         <div className="flex flex-col">
           <div className="relative w-full aspect-video bg-neutral-100 dark:bg-neutral-800">
-            {/* Slide 1: Thumbnail/Style */}
+            {/* Slide 1: Thumbnail/Style or GitHub Avatar */}
             {!useIframe ? (
               item.thumbnailUrl ? (
                 <>
@@ -81,7 +82,15 @@ export function PortfolioModal({ open, onClose, item }: PortfolioModalProps) {
                   />
                 </>
               ) : (
-                <div className="absolute inset-0" style={item.style} />
+                // GitHub Avatar Fallback
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+                  <GitHubAvatar
+                    sourceUrl={item.sourceUrl}
+                    name={item.name}
+                    size="lg"
+                    className="relative z-10"
+                  />
+                </div>
               )
             ) : item.liveUrl ? (
               <>
