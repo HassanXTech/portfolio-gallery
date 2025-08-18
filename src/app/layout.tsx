@@ -178,7 +178,7 @@ export const metadata: Metadata = {
     site: "@HassanXTech",
   },
   alternates: {
-    canonical: "https://portfoliogallery.dev",
+    // canonical: "https://portfoliogallery.dev", // Removed duplicate
   },
 
   classification: "Web Development, Portfolio Showcase, Design Inspiration",
@@ -242,10 +242,10 @@ export default function RootLayout({
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
         
-        {/* Additional crawling optimization tags */}
-        <meta name="googlebot-news" content="nosnippet" />
+        {/* Remove conflicting crawling optimization tags */}
+        {/* <meta name="googlebot-news" content="nosnippet" />
         <meta name="googlebot" content="noarchive" />
-        <meta name="googlebot" content="noimageindex" />
+        <meta name="googlebot" content="noimageindex" /> */}
         
         {/* og image */}
         <meta

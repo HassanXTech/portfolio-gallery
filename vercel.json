@@ -1,17 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.portfoliogallery.dev"
-        }
-      ],
-      "destination": "https://portfoliogallery.dev/",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
