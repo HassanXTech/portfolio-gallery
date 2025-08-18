@@ -41,6 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 # documentation files (exclude from version control)
-.APP_DESCRIPTION.md
-.CODE_ARCHITECTURE_GUIDE.md
-.SEO_OPTIMIZATION_GUIDE.md
+APP_DESCRIPTION.md
+CODE_ARCHITECTURE_GUIDE.md
+SEO_OPTIMIZATION_GUIDE.md
