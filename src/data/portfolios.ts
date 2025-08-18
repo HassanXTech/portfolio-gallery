@@ -295,6 +295,18 @@ export const gridPortfolios: Portfolio[] = [
     tags: ["Developer Advocacy", "Content Creation", "React", "Next.js"],
     style: {},
   },
+  {
+  id: "portfolio-27",
+  name: "Adelpro",
+  category: "web",
+  description: "Modern Mimimalist Web Developer Portfolio",
+  liveUrl: "https://adelpro.us.kg",
+  sourceUrl: "https://github.com/adelpro/adelpro.github.io",
+  tags: ["PWA", "Javascript", "CSS"],
+  thumbnailUrl: "https://adelpro.us.kg/images/preview.png",
+  style: {},
+  badge: "New",
+},
 ];
 
 
