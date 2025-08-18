@@ -41,6 +41,48 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Redirect www to non-www (canonical)
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.portfoliogallery.dev',
+          },
+        ],
+        destination: 'https://portfoliogallery.dev/:path*',
+        permanent: true,
+      },
+      // Redirect http to https
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'header',
+            key: 'x-forwarded-proto',
+            value: 'http',
+          },
+        ],
+        destination: 'https://portfoliogallery.dev/:path*',
+        permanent: true,
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

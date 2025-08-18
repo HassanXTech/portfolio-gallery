@@ -235,6 +235,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://portfoliogallery.dev" />
+        
+        {/* Additional meta tags to prevent redirect issues */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        
         {/* og image */}
         <meta
           property="og:image"
