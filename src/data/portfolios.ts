@@ -20,7 +20,7 @@ export const gridPortfolios: Portfolio[] = [
     id: "portfolio-2",
     name: "wiscaksono.com",
     category: "agency",
-    thumbnailUrl: "https://github.com/wiscaksono/site/blob/master/static/preview-1.png?raw=true",
+    thumbnailUrl: "https://raw.githubusercontent.com/wiscaksono/site/master/static/preview-1.png",
     thumbnailFit: "cover",
     liveUrl: "https://wiscaksono.com",
     sourceUrl: "https://github.com/wiscaksono/site",
