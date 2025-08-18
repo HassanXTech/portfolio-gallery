@@ -85,7 +85,6 @@ export default function PortfolioCard({
           // GitHub Avatar Fallback
           <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
             <GitHubAvatar
-              sourceUrl={pattern.sourceUrl}
               name={pattern.name}
               size="lg"
               className="relative z-10"

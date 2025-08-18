@@ -1,13 +1,12 @@
 "use client";
 
 interface GitHubAvatarProps {
-  sourceUrl?: string;
   name: string;
   size?: "sm" | "md" | "lg";
   className?: string;
 }
 
-export function GitHubAvatar({ sourceUrl, name, size = "md", className = "" }: GitHubAvatarProps) {
+export function GitHubAvatar({ name, size = "md", className = "" }: GitHubAvatarProps) {
   // Size classes
   const sizeClasses = {
     sm: "w-16 h-16",
