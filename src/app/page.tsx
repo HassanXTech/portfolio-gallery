@@ -31,12 +31,19 @@ export default function Home() {
     <>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <FavoritesProvider>
-          <div className="min-h-screen relative">
-            {/* Apply the active pattern as background */}
-            {activePatternObj && (
+          <div className="min-h-screen w-full relative">
+            {/* Apply the active pattern as background OR default radial gradient */}
+            {activePatternObj && activePatternObj.style && Object.keys(activePatternObj.style).length > 0 ? (
               <div
                 className="fixed inset-0 z-0"
                 style={activePatternObj.style}
+              />
+            ) : (
+              <div
+                className="fixed inset-0 z-0"
+                style={{
+                  background: "radial-gradient(125% 125% at 50% 10%, #fff 40%, #6366f1 100%)",
+                }}
               />
             )}
             <div className="relative z-10">

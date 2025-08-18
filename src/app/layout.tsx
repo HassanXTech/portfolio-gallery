@@ -189,18 +189,8 @@ export const metadata: Metadata = {
     "Portfolio Showcase",
     "Design Inspiration",
     "Developer Resources",
-    "Portfolio Gallery",
     "UI/UX Design",
     "Mobile App Development",
-    "Data Science",
-    "Backend Development",
-    "DevOps",
-    "Agency Showcase",
-    "Design Engineering",
-    "Indie Makers",
-    "Game Development",
-    "Student Projects",
-    "Content Creation",
     "Modern Web Design",
     "Responsive Design",
   ].join(", "),
@@ -219,7 +209,7 @@ export const metadata: Metadata = {
     "theme-color": "#000000",
 
     // Additional meta tags for better discovery
-    "google-site-verification": "your-verification-code-here",
+    "google-site-verification": "DeGN2y_FsI_RNPub9-2TPRjAeV-fehlO_BTgS5NePw8",
 
     // Rich snippets hints
     "article:author": "HassanXTech",
@@ -254,7 +244,7 @@ export default function RootLayout({
           name="twitter:image"
           content="https://portfoliogallery.dev/og-banner.png"
         />
-        <meta name="google-site-verification" content="your-verification-code-here" />
+        <meta name="google-site-verification" content="DeGN2y_FsI_RNPub9-2TPRjAeV-fehlO_BTgS5NePw8" />
 
         {/* JSON-LD Structured Data */}
         <script
@@ -265,6 +255,22 @@ export default function RootLayout({
               "@type": "WebSite",
               name: "Portfolio Gallery",
               url: "https://portfoliogallery.dev/",
+              description: "Discover and showcase 100+ stunning developer portfolios with live previews and source code access",
+              author: {
+                "@type": "Person",
+                name: "HassanXTech",
+                url: "https://github.com/HassanXTech",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Portfolio Gallery",
+                url: "https://portfoliogallery.dev",
+              },
+              datePublished: "2024-01-01",
+              dateModified: new Date().toISOString(),
+              inLanguage: "en-US",
+              isAccessibleForFree: true,
+              keywords: "Developer Portfolios, Portfolio Showcase, Design Inspiration, Web Development, UI/UX Design",
             }),
           }}
         />
@@ -498,8 +504,8 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem={true}
+          defaultTheme="light"
+          enableSystem={false}
         >
           {children}
           <Analytics />
