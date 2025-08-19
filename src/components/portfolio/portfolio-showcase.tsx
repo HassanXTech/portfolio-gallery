@@ -7,11 +7,12 @@ import { PortfolioModal } from "./portfolio-modal";
 // Switch data source to portfolios list
 import { gridPortfolios } from "@/data/portfolios";
 import { categories } from "@/data/categories";
-import { useFavorites } from "@/context/favourites-context";
 import PatternGrid from "./portfolio-grid";
 import PatternEmptyState from "./portfolio-empty-state";
 import { SearchBar } from "../search/search-bar";
-import { searchPatterns } from "@/lib/utils";
+import { AdvancedFilters } from "../search/advanced-filters";
+import { searchAndFilterPortfolios } from "@/lib/utils";
+import { FilterState } from "@/lib/filter-options";
 // No dynamic import needed; this file is a client component and modal handles client-only logic internally
 
 interface GalleryShowcaseProps {
@@ -25,12 +26,31 @@ export default function GalleryShowcase({
   theme,
 }: GalleryShowcaseProps) {
   const [activeTab, setActiveTab] = useState<string>("all");
-  const { favourites } = useFavorites();
   const isPatternDark = theme === "dark";
 
   const [searchInput, setSearchInput] = useState<string>("");
   const [detailsOpen, setDetailsOpen] = useState<boolean>(false);
   const [detailsItem, setDetailsItem] = useState<typeof gridPortfolios[number] | null>(null);
+
+  // Advanced filters state
+  const [filters, setFilters] = useState<FilterState>({
+    techStack: [],
+    colorScheme: [],
+    layoutType: [],
+    designStyle: [],
+    complexity: [],
+    searchQuery: "",
+    category: "all"
+  });
+
+  // Update filters when search input or active tab changes
+  useEffect(() => {
+    setFilters(prev => ({
+      ...prev,
+      searchQuery: searchInput,
+      category: activeTab
+    }));
+  }, [searchInput, activeTab]);
 
   // Desktop carousel: horizontal smooth scroll for middle categories
   const middleCategories = useMemo(
@@ -87,15 +107,10 @@ export default function GalleryShowcase({
     target?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
   }, [activeTab]);
 
-  // Filter patterns based on categories
-  const filteredPatterns =
-    searchInput === ""
-      ? activeTab === "all"
-        ? gridPortfolios
-        : activeTab === "favourites"
-        ? gridPortfolios.filter((pattern) => favourites.includes(pattern.id))
-        : gridPortfolios.filter((pattern) => pattern.category === activeTab)
-      : searchPatterns(gridPortfolios, activeTab, searchInput);
+  // Filter patterns based on categories and advanced filters
+  const filteredPatterns = useMemo(() => {
+    return searchAndFilterPortfolios(gridPortfolios, filters);
+  }, [filters]);
 
   return (
     <section
@@ -259,7 +274,14 @@ export default function GalleryShowcase({
           searchInput={searchInput}
           setSearchInput={setSearchInput}
           isPatternDark={isPatternDark}
-        ></SearchBar>
+        />
+
+        {/* Advanced Filters */}
+        <AdvancedFilters
+          filters={filters}
+          onFiltersChange={setFilters}
+          isPatternDark={isPatternDark}
+        />
 
         {categories.map((category) => (
           <TabsContent

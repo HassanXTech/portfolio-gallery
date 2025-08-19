@@ -13,6 +13,18 @@ export interface Portfolio {
   sourceUrl?: string;
   liveUrl?: string;
   style?: CSSProperties;
+  
+  // New filter fields
+  techStack?: string[];
+  colorScheme?: 'dark' | 'light' | 'colorful' | 'minimal' | 'monochrome';
+  layoutType?: 'single-page' | 'multi-page' | 'blog' | 'dashboard' | 'landing';
+  designStyle?: 'minimalist' | 'creative' | 'corporate' | 'artistic' | 'modern';
+  complexity?: 'beginner' | 'intermediate' | 'advanced';
+  performance?: {
+    lighthouse?: number;
+    mobileScore?: number;
+    accessibilityScore?: number;
+  };
 }
 
 
