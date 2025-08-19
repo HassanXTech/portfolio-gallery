@@ -82,7 +82,7 @@ export function AdvancedFilters({ filters, onFiltersChange, isPatternDark }: Adv
     const selectedValues = filters[filterType] as string[];
     
     return (
-      <div className="relative" ref={el => filterRefs.current[filterType] = el}>
+      <div className="relative" ref={(el) => { filterRefs.current[filterType] = el; }}>
         <Button
           variant="outline"
           onClick={onToggle}
