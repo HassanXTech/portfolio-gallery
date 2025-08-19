@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { ChevronDown, X, Filter } from "lucide-react";
+import { ChevronDown, X, Filter, Smartphone, ChevronUp, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { FILTER_OPTIONS, FilterState } from "@/lib/filter-options";
@@ -14,6 +14,7 @@ interface AdvancedFiltersProps {
 
 export function AdvancedFilters({ filters, onFiltersChange, isPatternDark }: AdvancedFiltersProps) {
   const [openFilter, setOpenFilter] = useState<string | null>(null);
+  const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const filterRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   // Handle click outside to close filters
@@ -158,6 +159,172 @@ export function AdvancedFilters({ filters, onFiltersChange, isPatternDark }: Adv
     );
   };
 
+  // Mobile Filter Panel
+  const MobileFilterPanel = () => (
+    <div className={`block sm:hidden transition-all duration-500 ease-in-out overflow-hidden ${
+      isMobileExpanded ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+    }`}>
+      <div className={`mt-4 p-4 rounded-xl border backdrop-blur-sm transition-all duration-300 ${
+        isPatternDark
+          ? "bg-black/20 border-white/10"
+          : "bg-white/50 border-gray-200/30"
+      }`}>
+        {/* Mobile Filter Grid */}
+        <div className="space-y-4">
+          {/* Tech Stack */}
+          <div className="space-y-2">
+            <h4 className={`text-sm font-semibold flex items-center gap-2 ${
+              isPatternDark ? "text-white" : "text-gray-900"
+            }`}>
+              <Sparkles className="h-4 w-4 text-blue-500" />
+              Tech Stack
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {FILTER_OPTIONS.techStack.map((tech) => {
+                const isSelected = filters.techStack.includes(tech);
+                return (
+                  <button
+                    key={tech}
+                    onClick={() => updateFilter('techStack', tech)}
+                    className={`px-3 py-2 rounded-full text-xs font-medium transition-all duration-200 ${
+                      isSelected
+                        ? 'bg-blue-500 text-white shadow-lg scale-105'
+                        : isPatternDark
+                        ? 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
+                    }`}
+                  >
+                    {tech}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Color Scheme */}
+          <div className="space-y-2">
+            <h4 className={`text-sm font-semibold flex items-center gap-2 ${
+              isPatternDark ? "text-white" : "text-gray-900"
+            }`}>
+              <div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-400 to-pink-400" />
+              Color Scheme
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {FILTER_OPTIONS.colorScheme.map((color) => {
+                const isSelected = filters.colorScheme.includes(color);
+                return (
+                  <button
+                    key={color}
+                    onClick={() => updateFilter('colorScheme', color)}
+                    className={`px-3 py-2 rounded-full text-xs font-medium transition-all duration-200 ${
+                      isSelected
+                        ? 'bg-blue-500 text-white shadow-lg scale-105'
+                        : isPatternDark
+                        ? 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
+                    }`}
+                  >
+                    {color}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Layout Type */}
+          <div className="space-y-2">
+            <h4 className={`text-sm font-semibold flex items-center gap-2 ${
+              isPatternDark ? "text-white" : "text-gray-900"
+            }`}>
+              <div className="w-4 h-4 bg-gradient-to-br from-blue-400 to-cyan-400 rounded" />
+              Layout Type
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {FILTER_OPTIONS.layoutType.map((layout) => {
+                const isSelected = filters.layoutType.includes(layout);
+                return (
+                  <button
+                    key={layout}
+                    onClick={() => updateFilter('layoutType', layout)}
+                    className={`px-3 py-2 rounded-full text-xs font-medium transition-all duration-200 ${
+                      isSelected
+                        ? 'bg-blue-500 text-white shadow-lg scale-105'
+                        : isPatternDark
+                        ? 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
+                    }`}
+                  >
+                    {layout}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Design Style */}
+          <div className="space-y-2">
+            <h4 className={`text-sm font-semibold flex items-center gap-2 ${
+              isPatternDark ? "text-white" : "text-gray-900"
+            }`}>
+              <div className="w-4 h-4 bg-gradient-to-br from-green-400 to-emerald-400 rounded-full" />
+              Design Style
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {FILTER_OPTIONS.designStyle.map((style) => {
+                const isSelected = filters.designStyle.includes(style);
+                return (
+                  <button
+                    key={style}
+                    onClick={() => updateFilter('designStyle', style)}
+                    className={`px-3 py-2 rounded-full text-xs font-medium transition-all duration-200 ${
+                      isSelected
+                        ? 'bg-blue-500 text-white shadow-lg scale-105'
+                        : isPatternDark
+                        ? 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
+                    }`}
+                  >
+                    {style}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Complexity */}
+          <div className="space-y-2">
+            <h4 className={`text-sm font-semibold flex items-center gap-2 ${
+              isPatternDark ? "text-white" : "text-gray-900"
+            }`}>
+              <div className="w-4 h-4 bg-gradient-to-br from-orange-400 to-red-400 rounded" />
+              Complexity
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {FILTER_OPTIONS.complexity.map((complexity) => {
+                const isSelected = filters.complexity.includes(complexity);
+                return (
+                  <button
+                    key={complexity}
+                    onClick={() => updateFilter('complexity', complexity)}
+                    className={`px-3 py-2 rounded-full text-xs font-medium transition-all duration-200 ${
+                      isSelected
+                        ? 'bg-blue-500 text-white shadow-lg scale-105'
+                        : isPatternDark
+                        ? 'bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
+                    }`}
+                  >
+                    {complexity}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="mb-6">
       {/* Header */}
@@ -189,8 +356,33 @@ export function AdvancedFilters({ filters, onFiltersChange, isPatternDark }: Adv
         )}
       </div>
 
-      {/* Filter Grid - Responsive */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      {/* Mobile Filter Toggle */}
+      <div className="block sm:hidden mb-4">
+        <Button
+          onClick={() => setIsMobileExpanded(!isMobileExpanded)}
+          className={`w-full gap-3 py-3 transition-all duration-300 ${
+            isPatternDark
+              ? "bg-black/30 border-white/20 text-white hover:bg-black/40"
+              : "bg-white/70 border-gray-200/30 text-gray-900 hover:bg-white/80"
+          } ${isMobileExpanded ? 'ring-2 ring-blue-500' : ''}`}
+        >
+          <Smartphone className="h-5 w-5" />
+          <span className="font-medium">
+            {isMobileExpanded ? 'Hide' : 'Show'} Mobile Filters
+          </span>
+          {isMobileExpanded ? (
+            <ChevronUp className="h-5 w-5" />
+          ) : (
+            <ChevronDown className="h-5 w-5" />
+          )}
+        </Button>
+      </div>
+
+      {/* Mobile Filter Panel */}
+      <MobileFilterPanel />
+
+      {/* Desktop Filter Grid - Hidden on Mobile */}
+      <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-3">
         <FilterDropdown
           title="Tech Stack"
           filterType="techStack"
