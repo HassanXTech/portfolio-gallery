@@ -249,6 +249,17 @@ export default function Hero({ theme }: HeroProps) {
             </div>
           </div>
         </div>
+
+        {/* Peerlist Embed */}
+        <div className="flex justify-center mt-8 sm:mt-10">
+          <a href="https://peerlist.io/hassantech/project/portfolio-gallery" target="_blank" rel="noreferrer">
+            <img
+              src="https://peerlist.io/api/v1/projects/embed/PRJHQ7MBA7J9L9RRA3MA9M8JNAD67A?showUpvote=true&theme=light"
+              alt="Portfolio Gallery"
+              style={{ width: "auto", height: "72px" }}
+            />
+          </a>
+        </div>
       </div>
     </section>
   );
