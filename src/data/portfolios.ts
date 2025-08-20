@@ -12,7 +12,7 @@ export const gridPortfolios: Portfolio[] = [
     category: "web",
     thumbnailUrl: "https://github.com/HassanXTech/hassanx.tech/raw/main/public/preview.png",
     liveUrl: "https://hassanx.tech",
-    sourceUrl: "https://github.com/example/repo",
+    sourceUrl: "https://github.com/HassanXTech/hassanx.tech",
     style: {},
     badge: "New",
     techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
