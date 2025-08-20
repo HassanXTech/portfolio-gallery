@@ -103,86 +103,34 @@ export default function PortfolioCard({
             
             {/* Live website preview iframe */}
             <iframe
+              key={`${pattern.id}-${isStaticPreview ? 'static' : 'dynamic'}`}
               src={pattern.liveUrl}
               className="absolute inset-0 h-full w-full z-10 border-0 pointer-events-none"
               loading="lazy"
-              sandbox="allow-scripts allow-same-origin"
+              sandbox={isStaticPreview ? "allow-same-origin" : "allow-scripts allow-same-origin"}
               referrerPolicy="no-referrer"
               title={`Preview of ${pattern.name}`}
               style={{
                 transform: 'scale(0.25)',
                 transformOrigin: 'top left',
                 width: '400%',
-                height: '400%',
-                // Additional CSS to reduce motion and make it more static
-                filter: isStaticPreview ? 'contrast(1.1) saturate(1.1) grayscale(0.1)' : 'none',
-                // Disable hardware acceleration to prevent animations
-                willChange: 'auto',
-                // Force a more static appearance
-                backfaceVisibility: 'hidden',
-                perspective: 'none'
+                height: '400%'
               }}
-              onLoad={(e) => {
-                setIframeLoaded(true);
-                // Only inject animation-disabling CSS if static preview is enabled
-                if (isStaticPreview) {
-                  try {
-                    const iframe = e.target as HTMLIFrameElement;
-                    const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-                    if (iframeDoc) {
-                      const style = iframeDoc.createElement('style');
-                      style.textContent = `
-                        *, *::before, *::after {
-                          animation: none !important;
-                          transition: none !important;
-                          transform: none !important;
-                          animation-duration: 0s !important;
-                          transition-duration: 0s !important;
-                          animation-delay: 0s !important;
-                          transition-delay: 0s !important;
-                          animation-fill-mode: none !important;
-                          transition-property: none !important;
-                          animation-iteration-count: 1 !important;
-                          animation-direction: normal !important;
-                          animation-timing-function: ease !important;
-                          transition-timing-function: ease !important;
-                        }
-                        /* Disable specific animation properties */
-                        [style*="animation"], [style*="transition"] {
-                          animation: none !important;
-                          transition: none !important;
-                        }
-                        /* Disable CSS animations */
-                        @keyframes * {
-                          from, to { opacity: 1; }
-                        }
-                        /* Disable hover effects */
-                        *:hover {
-                          transform: none !important;
-                          transition: none !important;
-                        }
-                        /* Force static appearance */
-                        body, html {
-                          animation: none !important;
-                          transition: none !important;
-                          transform: none !important;
-                        }
-                        /* Disable any JavaScript animations */
-                        [data-animate], [class*="animate"], [class*="fade"], [class*="slide"] {
-                          animation: none !important;
-                          transition: none !important;
-                          transform: none !important;
-                        }
-                      `;
-                      iframeDoc.head.appendChild(style);
-                    }
-                  } catch {
-                    // Silently fail if we can't inject CSS (cross-origin restrictions)
-                    console.log('Could not inject animation-disabling CSS into iframe');
-                  }
-                }
-              }}
+              onLoad={() => setIframeLoaded(true)}
             />
+            
+            {/* Static Overlay to create screenshot-like effect */}
+            {isStaticPreview && iframeLoaded && (
+              <div 
+                className="absolute inset-0 z-15 pointer-events-none"
+                style={{
+                  background: 'linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.01) 50%, transparent 51%)',
+                  backgroundSize: '4px 4px',
+                  opacity: 0.3,
+                  mixBlendMode: 'overlay'
+                }}
+              />
+            )}
             
             {/* Preview Mode Toggle Button */}
             {shouldUseLivePreview && iframeLoaded && (
@@ -202,7 +150,7 @@ export default function PortfolioCard({
                   {isStaticPreview ? (
                     <div className="w-3 h-3 border-2 border-current rounded-full" />
                   ) : (
-                    <div className="w-3 h-3 bg-current rounded-full" />
+                    <div className="w-3 h-3 bg-current rounded-full animate-pulse" />
                   )}
                 </div>
               </button>
