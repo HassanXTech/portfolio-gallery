@@ -22,8 +22,8 @@ export default function PortfolioCard({
   const { toggleFavourite, isFavourite } = useFavorites();
   const isPatternDark = theme === "dark";
   const [iframeLoaded, setIframeLoaded] = useState(false);
-  const [iframeError, setIframeError] = useState(false);
-  
+  const [isStaticPreview, setIsStaticPreview] = useState(true); // Default to static preview
+
   // Only use live preview if no thumbnail is available
   const shouldUseLivePreview = !pattern.thumbnailUrl && pattern.liveUrl;
 
@@ -113,26 +113,105 @@ export default function PortfolioCard({
                 transform: 'scale(0.25)',
                 transformOrigin: 'top left',
                 width: '400%',
-                height: '400%'
+                height: '400%',
+                // Additional CSS to reduce motion and make it more static
+                filter: isStaticPreview ? 'contrast(1.1) saturate(1.1) grayscale(0.1)' : 'none',
+                // Disable hardware acceleration to prevent animations
+                willChange: 'auto',
+                // Force a more static appearance
+                backfaceVisibility: 'hidden',
+                perspective: 'none'
               }}
-              onLoad={() => setIframeLoaded(true)}
-              onError={() => setIframeError(true)}
+              onLoad={(e) => {
+                setIframeLoaded(true);
+                // Only inject animation-disabling CSS if static preview is enabled
+                if (isStaticPreview) {
+                  try {
+                    const iframe = e.target as HTMLIFrameElement;
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+                    if (iframeDoc) {
+                      const style = iframeDoc.createElement('style');
+                      style.textContent = `
+                        *, *::before, *::after {
+                          animation: none !important;
+                          transition: none !important;
+                          transform: none !important;
+                          animation-duration: 0s !important;
+                          transition-duration: 0s !important;
+                          animation-delay: 0s !important;
+                          transition-delay: 0s !important;
+                          animation-fill-mode: none !important;
+                          transition-property: none !important;
+                          animation-iteration-count: 1 !important;
+                          animation-direction: normal !important;
+                          animation-timing-function: ease !important;
+                          transition-timing-function: ease !important;
+                        }
+                        /* Disable specific animation properties */
+                        [style*="animation"], [style*="transition"] {
+                          animation: none !important;
+                          transition: none !important;
+                        }
+                        /* Disable CSS animations */
+                        @keyframes * {
+                          from, to { opacity: 1; }
+                        }
+                        /* Disable hover effects */
+                        *:hover {
+                          transform: none !important;
+                          transition: none !important;
+                        }
+                        /* Force static appearance */
+                        body, html {
+                          animation: none !important;
+                          transition: none !important;
+                          transform: none !important;
+                        }
+                        /* Disable any JavaScript animations */
+                        [data-animate], [class*="animate"], [class*="fade"], [class*="slide"] {
+                          animation: none !important;
+                          transition: none !important;
+                          transform: none !important;
+                        }
+                      `;
+                      iframeDoc.head.appendChild(style);
+                    }
+                  } catch {
+                    // Silently fail if we can't inject CSS (cross-origin restrictions)
+                    console.log('Could not inject animation-disabling CSS into iframe');
+                  }
+                }
+              }}
             />
             
-            {/* Loading overlay */}
-            {!iframeLoaded && !iframeError && (
-              <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/20 dark:bg-black/40">
-                <div className="text-white text-sm font-medium">Loading preview...</div>
-              </div>
+            {/* Preview Mode Toggle Button */}
+            {shouldUseLivePreview && iframeLoaded && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsStaticPreview(!isStaticPreview);
+                }}
+                className={`absolute top-2 left-2 z-40 p-2 rounded-full backdrop-blur-md shadow-lg border transition-all cursor-pointer duration-200 hover:scale-110 ${
+                  isPatternDark
+                    ? "bg-black/20 border-white/20 text-white hover:bg-black/30 hover:border-white/30"
+                    : "bg-white/20 border-gray-300/30 text-gray-700 hover:bg-white/30 hover:border-gray-400/40"
+                }`}
+                title={isStaticPreview ? "Enable animations" : "Disable animations"}
+              >
+                <div className="h-4 w-4 flex items-center justify-center">
+                  {isStaticPreview ? (
+                    <div className="w-3 h-3 border-2 border-current rounded-full" />
+                  ) : (
+                    <div className="w-3 h-3 bg-current rounded-full" />
+                  )}
+                </div>
+              </button>
             )}
             
-            {/* Error fallback */}
-            {iframeError && (
+            {/* Loading overlay */}
+            {!iframeLoaded && (
               <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/20 dark:bg-black/40">
-                <div className="text-white text-sm font-medium text-center">
-                  <div>Preview unavailable</div>
-                  <div className="text-xs opacity-75 mt-1">Click Live button to visit</div>
-                </div>
+                <div className="text-white text-sm font-medium">Loading preview...</div>
               </div>
             )}
             
