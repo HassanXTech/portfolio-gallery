@@ -25,7 +25,7 @@
   <!-- Peerlist Badge -->
   <p align="center">
     <a href="https://peerlist.io/hassantech/project/portfolio-gallery" target="_blank" rel="noreferrer">
-      <img src="https://peerlist.io/api/v1/projects/embed/PRJHQ7MBA7J9L9RRA3MA9M8JNAD67A?showUpvote=true&theme=light" alt="Portfolio Gallery on Peerlist" style="width: auto; height: 72px;" />
+      <img src="https://img.shields.io/badge/Peerlist-Project%20Showcase-00D4AA?style=for-the-badge&logo=peerlist&logoColor=white&labelColor=1F2937" alt="Portfolio Gallery on Peerlist" />
     </a>
   </p>
 </div>
