@@ -311,6 +311,7 @@ export const gridPortfolios: Portfolio[] = [
     style: {},
   },
 
+
   // New Portfolios from A-Z List - Batch 1 (A Section)
   {
     id: "portfolio-27",
@@ -4605,6 +4606,18 @@ export const gridPortfolios: Portfolio[] = [
     sourceUrl: "https://github.com/aabanmalik",
     tags: ["Web Development", "Design", "Frontend"],
     style: {},
+  },
+  {
+    id: "portfolio-27",
+    name: "Adelpro",
+    category: "web",
+    description: "Modern Mimimalist Web Developer Portfolio",
+    liveUrl: "https://adelpro.us.kg",
+    sourceUrl: "https://github.com/adelpro/adelpro.github.io",
+    tags: ["PWA", "Javascript", "CSS"],
+    thumbnailUrl: "https://adelpro.us.kg/images/preview.png",
+    style: {},
+    badge: "New",
   },
 ];
 
