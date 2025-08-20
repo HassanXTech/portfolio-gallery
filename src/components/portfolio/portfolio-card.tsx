@@ -22,8 +22,8 @@ export default function PortfolioCard({
   const { toggleFavourite, isFavourite } = useFavorites();
   const isPatternDark = theme === "dark";
   const [iframeLoaded, setIframeLoaded] = useState(false);
-  const [isStaticPreview, setIsStaticPreview] = useState(true); // Default to static preview
-
+  const [iframeError, setIframeError] = useState(false);
+  
   // Only use live preview if no thumbnail is available
   const shouldUseLivePreview = !pattern.thumbnailUrl && pattern.liveUrl;
 
@@ -103,11 +103,10 @@ export default function PortfolioCard({
             
             {/* Live website preview iframe */}
             <iframe
-              key={`${pattern.id}-${isStaticPreview ? 'static' : 'dynamic'}`}
               src={pattern.liveUrl}
               className="absolute inset-0 h-full w-full z-10 border-0 pointer-events-none"
               loading="lazy"
-              sandbox={isStaticPreview ? "allow-same-origin" : "allow-scripts allow-same-origin"}
+              sandbox="allow-scripts allow-same-origin"
               referrerPolicy="no-referrer"
               title={`Preview of ${pattern.name}`}
               style={{
@@ -117,49 +116,23 @@ export default function PortfolioCard({
                 height: '400%'
               }}
               onLoad={() => setIframeLoaded(true)}
+              onError={() => setIframeError(true)}
             />
             
-            {/* Static Overlay to create screenshot-like effect */}
-            {isStaticPreview && iframeLoaded && (
-              <div 
-                className="absolute inset-0 z-15 pointer-events-none"
-                style={{
-                  background: 'linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.01) 50%, transparent 51%)',
-                  backgroundSize: '4px 4px',
-                  opacity: 0.3,
-                  mixBlendMode: 'overlay'
-                }}
-              />
-            )}
-            
-            {/* Preview Mode Toggle Button */}
-            {shouldUseLivePreview && iframeLoaded && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsStaticPreview(!isStaticPreview);
-                }}
-                className={`absolute top-2 left-2 z-40 p-2 rounded-full backdrop-blur-md shadow-lg border transition-all cursor-pointer duration-200 hover:scale-110 ${
-                  isPatternDark
-                    ? "bg-black/20 border-white/20 text-white hover:bg-black/30 hover:border-white/30"
-                    : "bg-white/20 border-gray-300/30 text-gray-700 hover:bg-white/30 hover:border-gray-400/40"
-                }`}
-                title={isStaticPreview ? "Enable animations" : "Disable animations"}
-              >
-                <div className="h-4 w-4 flex items-center justify-center">
-                  {isStaticPreview ? (
-                    <div className="w-3 h-3 border-2 border-current rounded-full" />
-                  ) : (
-                    <div className="w-3 h-3 bg-current rounded-full animate-pulse" />
-                  )}
-                </div>
-              </button>
-            )}
-            
             {/* Loading overlay */}
-            {!iframeLoaded && (
+            {!iframeLoaded && !iframeError && (
               <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/20 dark:bg-black/40">
                 <div className="text-white text-sm font-medium">Loading preview...</div>
+              </div>
+            )}
+            
+            {/* Error fallback */}
+            {iframeError && (
+              <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/20 dark:bg-black/40">
+                <div className="text-white text-sm font-medium text-center">
+                  <div>Preview unavailable</div>
+                  <div className="text-xs opacity-75 mt-1">Click Live button to visit</div>
+                </div>
               </div>
             )}
             
