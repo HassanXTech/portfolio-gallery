@@ -314,13 +314,15 @@ export const gridPortfolios: Portfolio[] = [
   // New Portfolios from A-Z List - Batch 1 (A Section)
   {
     id: "portfolio-27",
-    name: "Aaban Malik",
+    name: "Adelpro",
     category: "web",
-    description: "Web Developer & Designer",
-    liveUrl: "https://muhammadaamirmalik.com",
-    sourceUrl: "https://github.com/aabanmalik",
-    tags: ["Web Development", "Design", "Frontend"],
+    description: "Modern Mimimalist Web Developer Portfolio",
+    liveUrl: "https://adelpro.us.kg",
+    sourceUrl: "https://github.com/adelpro/adelpro.github.io",
+    tags: ["PWA", "Javascript", "CSS"],
+    thumbnailUrl: "https://adelpro.us.kg/images/preview.png",
     style: {},
+    badge: "New",
   },
   {
     id: "portfolio-28",
@@ -4592,6 +4594,16 @@ export const gridPortfolios: Portfolio[] = [
     liveUrl: "https://filip.vercel.app",
     sourceUrl: "https://github.com/filipe",
     tags: ["Full-Stack", "Web Development"],
+    style: {},
+  },
+  {
+    id: "portfolio-452",
+    name: "Aaban Malik",
+    category: "web",
+    description: "Web Developer & Designer",
+    liveUrl: "https://muhammadaamirmalik.com",
+    sourceUrl: "https://github.com/aabanmalik",
+    tags: ["Web Development", "Design", "Frontend"],
     style: {},
   },
 ];
