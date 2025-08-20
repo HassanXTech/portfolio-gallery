@@ -175,3 +175,39 @@ body {
 .dark .custom-scrollbar {
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
+
+/* Portfolio loading animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Portfolio card entrance animations */
+.portfolio-card-enter {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered animation delay for portfolio cards */
+.portfolio-card-stagger-1 { animation-delay: 0.1s; }
+.portfolio-card-stagger-2 { animation-delay: 0.2s; }
+.portfolio-card-stagger-3 { animation-delay: 0.3s; }
+.portfolio-card-stagger-4 { animation-delay: 0.4s; }
+.portfolio-card-stagger-5 { animation-delay: 0.5s; }
+.portfolio-card-stagger-6 { animation-delay: 0.6s; }

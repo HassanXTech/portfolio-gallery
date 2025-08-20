@@ -2,7 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 // Switch data source to portfolios list
 import { gridPortfolios } from "@/data/portfolios";
 import { categories } from "@/data/categories";
@@ -28,6 +28,11 @@ export default function GalleryShowcase({
 
   const [searchInput, setSearchInput] = useState<string>("");
 
+  // Pagination state
+  const [visibleCount, setVisibleCount] = useState<number>(12); // Show 12 portfolios initially
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [hasMore, setHasMore] = useState<boolean>(true);
+
   // Advanced filters state
   const [filters, setFilters] = useState<FilterState>({
     techStack: [],
@@ -46,6 +51,9 @@ export default function GalleryShowcase({
       searchQuery: searchInput,
       category: activeTab
     }));
+    // Reset pagination when filters change
+    setVisibleCount(12);
+    setHasMore(true);
   }, [searchInput, activeTab]);
 
   // Desktop carousel: horizontal smooth scroll for middle categories
@@ -107,6 +115,45 @@ export default function GalleryShowcase({
   const filteredPatterns = useMemo(() => {
     return searchAndFilterPortfolios(gridPortfolios, filters);
   }, [filters]);
+
+  // Get visible patterns for pagination
+  const visiblePatterns = useMemo(() => {
+    return filteredPatterns.slice(0, visibleCount);
+  }, [filteredPatterns, visibleCount]);
+
+  // Check if there are more patterns to show
+  useEffect(() => {
+    setHasMore(visibleCount < filteredPatterns.length);
+  }, [visibleCount, filteredPatterns.length]);
+
+  // Handle "Show More" button click
+  const handleShowMore = async () => {
+    if (isLoading || !hasMore) return;
+    
+    setIsLoading(true);
+    
+    // Simulate loading delay for smooth UX
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    // Increase visible count by 12 more portfolios
+    setVisibleCount(prev => prev + 12);
+    setIsLoading(false);
+  };
+
+  // Loading skeleton component
+  const LoadingSkeleton = () => (
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-6 md:gap-8">
+      {Array.from({ length: 6 }).map((_, index) => (
+        <div
+          key={`skeleton-${index}`}
+          className="animate-pulse"
+        >
+          <div className="aspect-[16/9] rounded-xl sm:rounded-2xl bg-gray-200 dark:bg-gray-700 mb-4"></div>
+          <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <section
@@ -200,7 +247,7 @@ export default function GalleryShowcase({
                            data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-gray-900`
                     }`}
                 >
-                  <span className="block truncate">{category.label}</span>
+                  {category.label}
                 </TabsTrigger>
               ))}
             </div>
@@ -292,19 +339,64 @@ export default function GalleryShowcase({
                   isPatternDark ? "text-gray-300" : "text-muted-foreground"
                 }`}
               >
-                {filteredPatterns.length} portfolio
+                Showing {visiblePatterns.length} of {filteredPatterns.length} portfolio
                 {filteredPatterns.length !== 1 ? "s" : ""}
                 {category.id !== "all" && ` in ${category.label}`}
               </p>
             </div>
 
             {/* Grid */}
-            {filteredPatterns.length > 0 ? (
-              <PortfolioGrid
-                patterns={filteredPatterns}
-                activePattern={activePattern}
-                theme={theme}
-              />
+            {visiblePatterns.length > 0 ? (
+              <>
+                <PortfolioGrid
+                  patterns={visiblePatterns}
+                  activePattern={activePattern}
+                  theme={theme}
+                />
+                
+                {/* Show More Button */}
+                {hasMore && (
+                  <div className="mt-12 text-center">
+                    <button
+                      onClick={handleShowMore}
+                      disabled={isLoading}
+                      className={`
+                        inline-flex items-center gap-3 px-8 py-4 rounded-xl font-medium
+                        transition-all duration-300 ease-in-out transform
+                        backdrop-blur-md shadow-lg border
+                        hover:scale-105 hover:shadow-xl active:scale-95
+                        disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
+                        ${
+                          isPatternDark
+                            ? "bg-white/10 text-white border-white/20 hover:bg-white/20 hover:border-white/30"
+                            : "bg-white/80 text-gray-900 border-gray-200/40 hover:bg-white hover:border-gray-300/50"
+                        }
+                      `}
+                    >
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="h-5 w-5 animate-spin" />
+                          Loading...
+                        </>
+                      ) : (
+                        <>
+                          Show More Portfolios
+                          <span className="text-sm opacity-75">
+                            ({filteredPatterns.length - visibleCount} remaining)
+                          </span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                )}
+
+                {/* Loading Skeleton */}
+                {isLoading && (
+                  <div className="mt-8 animate-fade-in">
+                    <LoadingSkeleton />
+                  </div>
+                )}
+              </>
             ) : (
               <PatternEmptyState
                 activeTab={activeTab}
