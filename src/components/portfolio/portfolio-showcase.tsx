@@ -3,17 +3,15 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { PortfolioModal } from "./portfolio-modal";
 // Switch data source to portfolios list
 import { gridPortfolios } from "@/data/portfolios";
 import { categories } from "@/data/categories";
-import PatternGrid from "./portfolio-grid";
+import PortfolioGrid from "./portfolio-grid";
 import PatternEmptyState from "./portfolio-empty-state";
 import { SearchBar } from "../search/search-bar";
 import { AdvancedFilters } from "../search/advanced-filters";
 import { searchAndFilterPortfolios } from "@/lib/utils";
 import { FilterState } from "@/lib/filter-options";
-// No dynamic import needed; this file is a client component and modal handles client-only logic internally
 
 interface GalleryShowcaseProps {
   activePattern: string | null;
@@ -29,8 +27,6 @@ export default function GalleryShowcase({
   const isPatternDark = theme === "dark";
 
   const [searchInput, setSearchInput] = useState<string>("");
-  const [detailsOpen, setDetailsOpen] = useState<boolean>(false);
-  const [detailsItem, setDetailsItem] = useState<typeof gridPortfolios[number] | null>(null);
 
   // Advanced filters state
   const [filters, setFilters] = useState<FilterState>({
@@ -304,14 +300,10 @@ export default function GalleryShowcase({
 
             {/* Grid */}
             {filteredPatterns.length > 0 ? (
-              <PatternGrid
+              <PortfolioGrid
                 patterns={filteredPatterns}
                 activePattern={activePattern}
                 theme={theme}
-                onOpenDetails={(item) => {
-                  setDetailsItem(item);
-                  setDetailsOpen(true);
-                }}
               />
             ) : (
               <PatternEmptyState
@@ -322,11 +314,6 @@ export default function GalleryShowcase({
           </TabsContent>
         ))}
       </Tabs>
-      <PortfolioModal
-        open={detailsOpen}
-        onClose={() => setDetailsOpen(false)}
-        item={detailsItem}
-      />
     </section>
   );
 }

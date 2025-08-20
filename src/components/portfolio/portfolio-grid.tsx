@@ -8,14 +8,12 @@ interface PortfolioGridProps {
   patterns: Portfolio[];
   activePattern: string | null;
   theme: "light" | "dark";
-  onOpenDetails: (item: Portfolio) => void;
 }
 
-export default function PatternGrid({
+export default function PortfolioGrid({
   patterns,
   activePattern,
   theme,
-  onOpenDetails,
 }: PortfolioGridProps) {
   const { favourites } = useFavorites();
 
@@ -27,7 +25,6 @@ export default function PatternGrid({
           pattern={pattern}
           activePattern={activePattern}
           theme={theme}
-          onOpenDetails={() => onOpenDetails(pattern)}
         />
       ))}
     </div>
