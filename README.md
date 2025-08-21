@@ -21,6 +21,13 @@
 <img src="https://img.shields.io/github/issues/HassanXTech/portfolio-gallery?style=social" alt="Issues" />
     
   </p>
+  
+  <!-- Peerlist Badge -->
+  <p align="center">
+    <a href="https://peerlist.io/hassantech/project/portfolio-gallery" target="_blank" rel="noreferrer">
+      <img src="https://img.shields.io/badge/Peerlist-Project%20Showcase-00D4AA?style=for-the-badge&logo=peerlist&logoColor=white&labelColor=1F2937" alt="Portfolio Gallery on Peerlist" />
+    </a>
+  </p>
 </div>
 
 ---
