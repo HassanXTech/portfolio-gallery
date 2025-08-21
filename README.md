@@ -30,6 +30,33 @@
   </p>
 </div>
 
+<!-- Trending Section -->
+<div align="center">
+  <h3 align="center">🚀 <strong>#Trending on Developer Communities</strong> 🚀</h3>
+  <p align="center">
+    <strong>Portfolio Gallery is making waves across the developer ecosystem!</strong>
+  </p>
+  
+  <div align="center">
+    <a href="https://github.com/HassanXTech/portfolio-gallery/stargazers" target="_blank">
+      <img src="https://img.shields.io/github/stars/HassanXTech/portfolio-gallery?style=for-the-badge&logo=github&color=yellow&labelColor=1F2937" alt="GitHub Stars" />
+    </a>
+    <a href="https://github.com/HassanXTech/portfolio-gallery/network/members" target="_blank">
+      <img src="https://img.shields.io/github/forks/HassanXTech/portfolio-gallery?style=for-the-badge&logo=github&color=blue&labelColor=1F2937" alt="GitHub Forks" />
+    </a>
+    <a href="https://github.com/HassanXTech/portfolio-gallery/issues" target="_blank">
+      <img src="https://img.shields.io/badge/GitHub-Issues-red?style=for-the-badge&logo=github&labelColor=1F2937" alt="GitHub Issues" />
+    </a>
+    <a href="https://github.com/HassanXTech/portfolio-gallery/pulls" target="_blank">
+      <img src="https://img.shields.io/badge/GitHub-Pull%20Requests-green?style=for-the-badge&logo=github&labelColor=1F2937" alt="GitHub Pull Requests" />
+    </a>
+  </div>
+  
+  <p align="center">
+    <em>🔥 Featured on Peerlist • 🌟 Growing Community • 💡 Open for Contributions</em>
+  </p>
+</div>
+
 ---
 
 ## Visit: **[Portfolio Gallery](https://portfoliogallery.dev)**
