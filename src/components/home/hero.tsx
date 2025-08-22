@@ -61,7 +61,7 @@ export default function Hero({ theme }: HeroProps) {
                 isPatternDark ? "text-white" : "text-gray-900 dark:text-gray-50"
               }`}
             >
-              Discover Inspiring
+              Providing Beautiful
             </span>
           </h1>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold tracking-tight">
@@ -72,7 +72,7 @@ export default function Hero({ theme }: HeroProps) {
                   : "from-neutral-900 via-slate-500 to-neutral-500 dark:from-neutral-100 dark:via-slate-400 dark:to-neutral-400"
               }`}
             >
-              Developer Portfolios
+              Portfolios ✨
             </span>
           </h2>
         </div>
@@ -83,9 +83,7 @@ export default function Hero({ theme }: HeroProps) {
             isPatternDark ? "text-gray-200" : "text-gray-600 dark:text-gray-200"
           }`}
         >
-          Explore a curated gallery of developer portfolios. Get inspired by
-          real-world designs and layouts.
-          <span className="block">Showcasing modern portfolios built by amazing developers</span>
+          Showcase your work with 100+ stunning portfolio designs that attract opportunities and drive real results.
         </p>
 
         {/* Feature highlights */}
@@ -176,7 +174,7 @@ export default function Hero({ theme }: HeroProps) {
             }}
           >
             <Github className="h-4 sm:h-5 w-4 sm:w-5" />
-            Contribute Here!
+            Join Us
           </Button>
           <Button
             size="lg"
@@ -188,7 +186,7 @@ export default function Hero({ theme }: HeroProps) {
             onClick={handleBrowsePatternsClick}
           >
             <Code2 className="h-4 sm:h-5 w-4 sm:w-5" />
-            Browse Portfolios
+            Discover
           </Button>
         </div>
 

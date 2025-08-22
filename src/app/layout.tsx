@@ -9,9 +9,9 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfoliogallery.dev"),
-  title: "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+  title: "Portfolio Gallery - Providing Beautiful Portfolios | 100+ Stunning Designs",
   description:
-    "Explore a curated collection of 100+ stunning developer portfolios with live previews and source code access. Find inspiration for web development, UI/UX design, mobile apps, and more. Perfect for developers, hiring managers, and design inspiration.",
+    "Providing beautiful portfolios that showcase your work professionally. 100+ stunning designs with live previews, source code, and proven results for developers and designers.",
   keywords: [
     // Primary keywords (focus on user intent)
     "developer portfolios",
@@ -28,6 +28,18 @@ export const metadata: Metadata = {
     "game development portfolios",
     "student portfolios",
     "content writing portfolios",
+
+    // New variations for multiple search results
+    "providing beautiful portfolios",
+    "build share inspire",
+    "portfolio designs that convert",
+    "stunning portfolio examples",
+    "professional portfolio showcase",
+    "portfolio inspiration gallery",
+    "developer portfolio collection",
+    "beautiful portfolio designs",
+    "portfolio showcase platform",
+    "portfolio design inspiration",
 
     // Long-tail keywords (better for ranking)
     "free developer portfolio examples",
@@ -154,9 +166,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+    title: "Portfolio Gallery - Providing Beautiful Portfolios",
     description:
-      "Explore a curated collection of 100+ stunning developer portfolios with live previews and source code access. Perfect for developers, hiring managers, and design inspiration.",
+      "Providing beautiful portfolios that showcase your work professionally. 100+ stunning designs with live previews, source code, and proven results for developers and designers.",
     url: "https://portfoliogallery.dev",
     siteName: "Portfolio Gallery",
     type: "website",
@@ -165,14 +177,14 @@ export const metadata: Metadata = {
         url: "/og-banner.png",
         width: 1200,
         height: 630,
-        alt: "Portfolio Gallery – Discover 100+ Stunning Developer Portfolios",
+        alt: "Portfolio Gallery – Providing Beautiful Portfolios",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
-    description: "100+ curated developer portfolios with live previews and source code access. Perfect for developers, hiring managers, and design inspiration.",
+    title: "Portfolio Gallery - Providing Beautiful Portfolios",
+    description: "Providing beautiful portfolios that showcase your work professionally. 100+ stunning designs with live previews, source code, and proven results for developers and designers.",
     images: ["/og-banner.png"],
     creator: "@HassanXTech",
     site: "@HassanXTech",
@@ -181,7 +193,7 @@ export const metadata: Metadata = {
     // canonical: "https://portfoliogallery.dev", // Removed duplicate
   },
 
-  classification: "Web Development, Portfolio Showcase, Design Inspiration",
+  classification: "Web Development, Portfolio Showcase, Design Inspiration, Professional Portfolios, Beautiful Designs, Build Share Inspire",
 
   // Additional SEO enhancements
   category: [
@@ -193,6 +205,10 @@ export const metadata: Metadata = {
     "Mobile App Development",
     "Modern Web Design",
     "Responsive Design",
+    "Professional Portfolios",
+    "Beautiful Portfolio Designs",
+    "Portfolio Inspiration",
+    "Developer Showcase",
   ].join(", "),
 
   // Add app-specific metadata
@@ -267,7 +283,7 @@ export default function RootLayout({
               "@type": "WebSite",
               name: "Portfolio Gallery",
               url: "https://portfoliogallery.dev/",
-              description: "Discover and showcase 100+ stunning developer portfolios with live previews and source code access",
+              description: "Providing beautiful portfolios that showcase your work professionally. 100+ stunning designs with live previews, source code, and proven results for developers and designers.",
               author: {
                 "@type": "Person",
                 name: "HassanXTech",
@@ -295,7 +311,7 @@ export default function RootLayout({
               "@type": "WebApplication",
               name: "Portfolio Gallery",
               description:
-                "Discover and showcase 100+ stunning developer portfolios with live previews and source code access",
+                "Providing beautiful portfolios that showcase your work professionally. 100+ stunning designs with live previews, source code, and proven results for developers and designers.",
               url: "https://portfoliogallery.dev",
               applicationCategory: "DeveloperApplication",
               operatingSystem: "Web",
@@ -327,154 +343,154 @@ export default function RootLayout({
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-1.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-2.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-3.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-4.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-5.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-6.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-7.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-8.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-9.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-10.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-11.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-12.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-13.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-14.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-15.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-16.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-17.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-18.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-19.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-20.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-21.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Providing Beautiful Portfolios",
                 },
                 {
                   "@type": "ImageObject",
                   contentUrl:
                     "https://portfoliogallery.dev/snapshots/screenshot-22.png",
                   description:
-                    "Portfolio Gallery - Discover 100+ Stunning Developer Portfolios",
+                    "Portfolio Gallery - Build. Share. Inspire.",
                 },
               ],
               softwareVersion: "1.0.0",
@@ -499,6 +515,12 @@ export default function RootLayout({
                 "Favorites system for portfolio management",
                 "Responsive design for all devices",
                 "Dark/light theme support",
+                "Professional portfolio showcase",
+                "Beautiful portfolio designs",
+                "Portfolio inspiration gallery",
+                "Developer portfolio collection",
+                "Portfolio design inspiration",
+                "Stunning portfolio examples",
               ],
               browserRequirements: "Requires modern browser with JavaScript support",
               interactionStatistic: {

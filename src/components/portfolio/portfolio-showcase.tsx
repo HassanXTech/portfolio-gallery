@@ -2,7 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader2, ArrowDown } from "lucide-react";
 // Switch data source to portfolios list
 import { gridPortfolios } from "@/data/portfolios";
 import { categories } from "@/data/categories";
@@ -356,34 +356,37 @@ export default function GalleryShowcase({
                 
                 {/* Show More Button */}
                 {hasMore && (
-                  <div className="mt-12 text-center">
+                  <div className="mt-8 text-center">
                     <button
                       onClick={handleShowMore}
                       disabled={isLoading}
                       className={`
-                        inline-flex items-center gap-3 px-8 py-4 rounded-xl font-medium
-                        transition-all duration-300 ease-in-out transform
-                        backdrop-blur-md shadow-lg border
-                        hover:scale-105 hover:shadow-xl active:scale-95
+                        group inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm
+                        transition-all duration-300 ease-out transform
+                        backdrop-blur-md shadow-md border
+                        hover:scale-102 hover:shadow-lg hover:-translate-y-0.5
+                        active:scale-98 active:translate-y-0
                         disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
+                        animate-fade-in-up
                         ${
                           isPatternDark
-                            ? "bg-white/10 text-white border-white/20 hover:bg-white/20 hover:border-white/30"
-                            : "bg-white/80 text-gray-900 border-gray-200/40 hover:bg-white hover:border-gray-300/50"
+                            ? "bg-white/15 text-white border-white/25 hover:bg-white/25 hover:border-white/35 hover:shadow-white/10"
+                            : "bg-white/90 text-gray-800 border-gray-200/50 hover:bg-white hover:border-gray-300/60 hover:shadow-gray-200/20"
                         }
                       `}
                     >
                       {isLoading ? (
                         <>
-                          <Loader2 className="h-5 w-5 animate-spin" />
-                          Loading...
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                          <span className="animate-pulse">Loading...</span>
                         </>
                       ) : (
                         <>
-                          Show More Portfolios
-                          <span className="text-sm opacity-75">
-                            ({filteredPatterns.length - visibleCount} remaining)
+                          <span className="font-semibold">Show More</span>
+                          <span className="text-xs opacity-70 font-normal">
+                            ({filteredPatterns.length - visibleCount} left)
                           </span>
+                          <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
                         </>
                       )}
                     </button>

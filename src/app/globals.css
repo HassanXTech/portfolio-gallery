@@ -211,3 +211,37 @@ body {
 .portfolio-card-stagger-4 { animation-delay: 0.4s; }
 .portfolio-card-stagger-5 { animation-delay: 0.5s; }
 .portfolio-card-stagger-6 { animation-delay: 0.6s; }
+
+/* Show More button animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+/* Smooth scale animations for buttons */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+.active\:scale-98:active {
+  transform: scale(0.98);
+}
+
+/* Smooth translate animations */
+.hover\:-translate-y-0\.5:hover {
+  transform: translateY(-2px);
+}
+
+.active\:translate-y-0:active {
+  transform: translateY(0);
+}

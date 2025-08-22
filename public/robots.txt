@@ -1,9 +1,21 @@
-# *
+# Portfolio Gallery - Robots.txt
+# Allow all crawlers
 User-agent: *
 Allow: /
+
+# Disallow admin and private areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /404
+Disallow: /500
 
 # Host
 Host: https://portfoliogallery.dev
 
 # Sitemaps
 Sitemap: https://portfoliogallery.dev/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

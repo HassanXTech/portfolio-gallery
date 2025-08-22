@@ -1,15 +1,15 @@
 # Portfolio Gallery
 
-> _**For developers, by developers. Portfolio that slaps⚡**_
+> _**Providing Beautiful Portfolios. ✨**_
 
 <div align="center">
-  <img src="./public/images/readme-banner.png" alt="Portfolio Gallery Banner - Discover 100+ Stunning Developer Portfolios" />
+  <img src="./public/images/readme-banner.png" alt="Portfolio Gallery - Providing Beautiful Portfolios" />
   <br><br>
   <p align="left">
-    <strong>Discover and showcase 100+ stunning developer portfolios with live previews and source code access.</strong>
-    Browse curated portfolios by category, search for inspiration, and save your favorites. Built with modern Next.js and Tailwind CSS & more tech tools for seamless performance and beautiful design.<br>
+    <strong>100+ stunning portfolio designs with live previews, source code, and professional outcomes.</strong>
+    Transform your online presence with curated portfolio designs that showcase your skills beautifully. Built for developers who demand excellence, designers who prioritize impact, and hiring managers who need to evaluate talent effectively.<br>
     </br>
-    <em>Perfect for developers seeking inspiration, hiring managers evaluating talent, and teams building portfolio collections. Made for devs who appreciate great design and want to showcase their work.</em>
+    <em>Every portfolio demonstrates real-world success with live demos and accessible source code. Whether you're building your own portfolio, seeking inspiration, or evaluating talent, our collection provides the professional foundation you need to succeed.</em>
     </br>
   </p>
   <br>
