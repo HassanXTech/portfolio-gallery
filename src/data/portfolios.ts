@@ -262,7 +262,7 @@ export const gridPortfolios: Portfolio[] = [
     category: "backend-devops",
     description: "DevOps & Cloud Solutions Engineer",
     liveUrl: "https://binyam.io",
-    sourceUrl: "https://github.com/binyam",
+    sourceUrl: "https://github.com/binyamse",
     tags: ["DevOps", "AWS", "Docker", "Kubernetes"],
     style: {},
   },
