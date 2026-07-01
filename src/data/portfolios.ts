@@ -4712,6 +4712,24 @@ export const gridPortfolios: Portfolio[] = [
     style: {},
     badge: "New",
   },
+  {
+    id: "portfolio-stimmie-dev",
+    name: "Stimmie",
+    category: "web",
+    description: "Software Engineer — neo-brutalist personal homepage with talks, projects, and blog",
+    badge: "New",
+    thumbnailUrl: "https://image.thum.io/get/width/1280/crop/720/noanimate/https://stimmie.dev",
+    liveUrl: "https://stimmie.dev",
+    sourceUrl: "https://github.com/smmariquit/stimmie.dev",
+    tags: ["Next.js", "React", "Framer Motion", "Tailwind CSS"],
+    techStack: ["Next.js", "React", "Framer Motion", "Tailwind CSS"],
+    colorScheme: "dark",
+    layoutType: "multi-page",
+    designStyle: "creative",
+    complexity: "intermediate",
+    style: {},
+  },
+
 ];
 
 
