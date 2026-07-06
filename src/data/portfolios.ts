@@ -4701,6 +4701,28 @@ export const gridPortfolios: Portfolio[] = [
     style: {},
   },
   {
+    id: "portfolio-453",
+    name: "Azwad Fawad Hasan",
+    category: "web",
+    description: "Software Engineer | AI & Next-Generation Networks Researcher",
+    liveUrl: "https://azwadfawadhasan.github.io/resume/",
+    sourceUrl: "https://github.com/AzwadFawadHasan",
+    tags: [
+      "Software Engineering",
+      "AI/ML",
+      "Computer Networks",
+      "Cybersecurity",
+      "Python"
+    ],
+    thumbnailUrl: "https://image.thum.io/get/width/1280/crop/720/noanimate/https://azwadfawadhasan.github.io/resume/",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    colorScheme: "light",
+    layoutType: "single-page",
+    designStyle: "minimalist",
+    complexity: "beginner",
+    style: {},
+  },
+  {
     id: "portfolio-27",
     name: "Adelpro",
     category: "web",
